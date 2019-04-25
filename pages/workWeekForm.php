@@ -80,7 +80,6 @@
 	</div>
 
 	<!--Sunday -->
-
 	<div class="form-group">
 		<div class="row">
 			<div class="col">
@@ -89,6 +88,19 @@
 
 			<div class="col">
 				<input id="sunTips" name="sunTips" class="form-control" type="number"/>
+			</div>
+		</div>
+	</div>
+
+	<!-- Weekly Pay -->
+	<div class = "form-group">
+		<div class="row">
+			<div class="col">
+				<label for="weeklyPay">Weekly Pay</label>
+			</div>
+			
+			<div class="col">
+				<input id="weekly_pay" class="form-control" name="weekly_pay" type="number"/>
 			</div>
 		</div>
 	</div>

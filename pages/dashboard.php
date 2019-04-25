@@ -6,7 +6,7 @@ if (isset($_SESSION["currUserID"])) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-	$monTips = $tueTips = $wedTips = $thrTips = $friTips = $satTips =$sunTips = 0;
+	$monTips = $tueTips = $wedTips = $thrTips = $friTips = $satTips = $sunTips = $weekly_pay= 0;
 
 	if (!empty($_POST['monTips'])) {
 		$monTips = $_POST['monTips'];
@@ -36,6 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		$sunTips = $_POST['sunTips'];
 	}
 
+	if (!empty($_POST['weekly_pay'])) {
+		$weekly_pay = $_POST['weekly_pay'];
+	}
+
 	echo '<br>'.$monTips.'<br>';
 	echo $tueTips.'<br>';
 	echo $wedTips.'<br>';
@@ -43,13 +47,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	echo $friTips.'<br>';
 	echo $satTips.'<br>';
 	echo $sunTips.'<br>';
+
+	$weekDate = date("Y-m-d");
+	$insertNewWeekSQL = "INSERT INTO `work_weeks` (uid, mon, tue, wed, thr, fri, sat, sun, weekly_pay, week_date) VALUES ('$userID' ,'$monTips', '$tueTips', '$wedTips', '$thrTips', '$friTips', '$satTips', '$sunTips', '$weekly_pay', '$weekDate')";
+
+	$newWeekResult = $GLOBALS['conn']->query($insertNewWeekSQL);
+
+	if ($newWeekResult) {
+		echo 'New week Inserted';
+	} else {
+		echo 'Error inserting new week: '.$GLOBALS['conn']->connect_error;
+	}	
 }
 
 ?>
-
-
-
-
 </div>
 
 
@@ -58,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-	<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+	<h5 class="modal-title" id="exampleModalLabel">Create Week</h5>
 	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	</button>
       </div>
