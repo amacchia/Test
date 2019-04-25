@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$_SESSION['userEmail'] = $email;
 
 		$_SESSION['currUserEmail'] = $email; 
-		header("Location: ./index1.php?page=dashboard");
+		header("Location: ./index.php?page=dashboard");
 
 	} else {
 		$errMsg = 'User Not Found';
@@ -50,7 +50,7 @@ function clean_input($data) {
 <div class="container">
 <h1 id="sign-up-form-title">Login</h1>
 <div id="sign-up-form">
-    <form method="POST" action="./index1.php?page=login">
+    <form method="POST" action="./index.php?page=login">
 	<label for="email" class="input-label">Email</label>
 	<input type="email" name="email" class="form-input"><br>
 
@@ -58,7 +58,7 @@ function clean_input($data) {
 	<input type="password" name="pword" class="form-input"><br>
 
 	<input type="submit" value="Login" id="sub-btn">
-	<p>Not a user? <a href="./index1.php?page=sign-up">Sign Up</a></p>
+	<p>Not a user? <a href="./index.php?page=sign-up">Sign Up</a></p>
     </form>
 </div>
 
