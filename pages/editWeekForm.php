@@ -1,13 +1,13 @@
-<form id="workWeekForm" action="./index.php?page=dashboard" method="post">
+<form id="editWeekForm" action="./index.php?page=dashboard" method="post">
 	<div class="form-group">
 		<!--Monday -->
 		<div class="row">
 			<div class="col">
-				<label for="monTips">Monday</label>
+				<label for="editMonTips">Monday</label>
 			</div>
 
 			<div class="col">
-				<input id="monTips" name="monTips" class="form-control" type="number"/>
+				<input id="editMonTips" name="monTips" class="form-control" type="number"/>
 			</div>
 		</div>
 	</div>
@@ -16,11 +16,11 @@
 		<!--Tuesday-->
 		<div class="row">
 			<div class="col">
-				<label for="tueTips">Tuesday</label>
+				<label for="editTueTips">Tuesday</label>
 			</div>
 
 			<div class="col">
-				<input id="tueTips" name="tueTips" class="form-control" type="number"/>
+				<input id="editTueTips" name="tueTips" class="form-control" type="number"/>
 			</div>
 		</div>
 	</div>
@@ -29,11 +29,11 @@
 	<div class="form-group">
 		<div class="row">
 			<div class="col">
-				<label for="wedTips">Wednesday</label>
+				<label for="editWedTips">Wednesday</label>
 			</div>
 
 			<div class="col">
-				<input id="wedTips" name="wedTips" class="form-control" type="number"/>
+				<input id="editWedTips" name="wedTips" class="form-control" type="number"/>
 
 			</div>
 		</div>
@@ -43,11 +43,11 @@
 	<div class="form-group">
 		<div class="row">
 			<div class="col">
-				<label for="thrTips">Thursday</label>
+				<label for="editThrTips">Thursday</label>
 			</div>
 
 			<div class="col">
-				<input id="thrTips" name="thrTips" class="form-control" type="number"/>
+				<input id="editThrTips" name="thrTips" class="form-control" type="number"/>
 			</div>
 		</div>
 	</div>
@@ -56,25 +56,24 @@
 	<div class="form-group">
 		<div class="row">
 			<div class="col">
-				<label for="friTips">Friday</label>
+				<label for="editFriTips">Friday</label>
 			</div>
 
 			<div class="col">
-				<input id="friTips" name="friTips" class="form-control" type="number"/>
+				<input id="editFriTips" name="friTips" class="form-control" type="number"/>
 			</div>
 		</div>
 	</div>
 
 	<!--Saturday -->
-
 	<div class="form-group">
 		<div class="row">
 			<div class="col">
-				<label for="satTips">Saturday</label>
+				<label for="editSatTips">Saturday</label>
 			</div>
 	
 			<div class="col">
-				<input id="satTips" name="satTips" class="form-control" type="number"/>
+				<input id="editSatTips" name="satTips" class="form-control" type="number"/>
 			</div>
 		</div>
 	</div>
@@ -83,11 +82,11 @@
 	<div class="form-group">
 		<div class="row">
 			<div class="col">
-				<label for="sunTips">Sunday</label>
+				<label for="editSunTips">Sunday</label>
 			</div>
 
 			<div class="col">
-				<input id="sunTips" name="sunTips" class="form-control" type="number"/>
+				<input id="editSunTips" name="sunTips" class="form-control" type="number"/>
 			</div>
 		</div>
 	</div>	
@@ -96,11 +95,11 @@
 	<div class = "form-group">
 		<div class="row">
 			<div class="col">
-				<label for="hours_worked">Hours Worked</label>
+				<label for="eidtHoursWorked">Hours Worked</label>
 			</div>
 			
 			<div class="col">
-				<input id="hours_worked" class="form-control" name="hours_worked" type="number"/>
+				<input id="editHoursWorked" class="form-control" name="hours_worked" type="number"/>
 			</div>
 		</div>
 	</div>
@@ -109,18 +108,22 @@
 	<div class = "form-group">
 		<div class="row">
 			<div class="col">
-				<label for="weeklyPay">Weekly Pay</label>
+				<label for="editWeeklyPay">Weekly Pay</label>
 			</div>
 			
 			<div class="col">
-				<input id="weekly_pay" class="form-control" name="weekly_pay" type="number"/>
+				<input id="editWeeklyPay" class="form-control" name="weekly_pay" type="number"/>
 			</div>
 		</div>
 	</div>
 
+
+	<input id="editWeekID" id="week_id" name="week_id" hidden>
+
 	<div class="modal-footer">
 		<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-		<input form="workWeekForm" type="submit" class="btn btn-primary">
+		<input form="editWeekForm" type="submit" class="btn btn-primary">
 	</div>
+
 
 </form>

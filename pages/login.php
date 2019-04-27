@@ -1,6 +1,6 @@
 <?php
 if (isset($_SESSION["currUserID"])) {
-	$_SESSION["currUserID"] = -1;
+	session_unset();
 }
 
 // define variables and set to empty values
