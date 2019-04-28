@@ -94,11 +94,20 @@ if ($weekResult) {
 	while ($row = $weekResult->fetch_assoc()) {
 		$data[] = $row;
 	}
+
+	$total = 0.0;
+	$workWeeks = count($data);
+	foreach ($data as $week) {
+		$total += $week['mon'] + $week['tue'] + $week['wed'] + $week['thr'] + $week['fri'] + $week['sat'] + $week['sun'];
+	}
+	$weeklyAvg = $total / $workWeeks;
 } else {
 	echo 'Error retrieving work weeks'.$GLOBALS['conn']->connect_error;
 }	
 ?>
-
+<h6>
+	Weekly Average Tips: <?php echo '$'.number_format((float)$weeklyAvg, 2, '.', '').'<br><br>'; ?>
+</h6>
 <table class="table table-hover">
 	<thead>
 		<tr>
