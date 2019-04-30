@@ -106,7 +106,14 @@ if ($weekResult) {
 }	
 ?>
 <h6>
-	Weekly Average Tips: <?php echo '$'.number_format((float)$weeklyAvg, 2, '.', '').'<br><br>'; ?>
+<?php
+	$avg = number_format((float)$weeklyAvg, 2, '.', '');
+	
+	if (is_nan($avg)) {
+		$avg = 0.00;
+	}
+?>
+	Weekly Average Tips: <?php echo '$'.$avg.'<br><br>'; ?>
 </h6>
 <table class="table table-hover">
 	<thead>

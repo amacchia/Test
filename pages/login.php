@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		header("Location: ./index.php?page=dashboard");
 
 	} else {
-		$errMsg = 'User Not Found';
+		$errMsg = 'Invalid Credentials';
 	}
 	$GLOBALS['conn']->close(); 
 }
