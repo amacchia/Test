@@ -39,6 +39,12 @@ if (isset($_GET['page'])) {
 	case 'dashboard':
 		include 'dashboard.php';
 		break;
+	case 'passwordReset':
+		include 'reset.php';
+		break;
+	case 'newPassword':
+		include 'newpwrd.php';
+		break;
 	default:
 		include 'login.php';
 		break;

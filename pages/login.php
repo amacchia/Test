@@ -59,6 +59,7 @@ function clean_input($data) {
 
 	<input type="submit" value="Login" id="sub-btn">
 	<p>Not a user? <a href="./index.php?page=sign-up">Sign Up</a></p>
+	<a href="./index.php?page=passwordReset">Forgot Password?</a>
     </form>
 </div>
 
