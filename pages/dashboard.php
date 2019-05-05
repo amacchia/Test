@@ -103,17 +103,31 @@ if ($weekResult) {
 	$weeklyAvg = $total / $workWeeks;
 } else {
 	echo 'Error retrieving work weeks'.$GLOBALS['conn']->connect_error;
-}	
+}
+
+//Get total tips made
+$totalSQL = "SELECT SUM(mon) + SUM(tue) + SUM(wed) + SUM(thr) + SUM(fri) + SUM(sat) + SUM(sun) total FROM work_weeks WHERE uid = '$userID'
+GROUP BY uid;";
+$totalResult = $GLOBALS['conn']->query($totalSQL);
+if ($totalResult) {
+	$row = $totalResult->fetch_assoc();
+	$tipTotal = $row['total'];
+}
 ?>
 <h6>
 <?php
 	$avg = number_format((float)$weeklyAvg, 2, '.', '');
+	$tipTotal = number_format((float)$tipTotal, 2, '.', '');
 	
 	if (is_nan($avg)) {
 		$avg = 0.00;
 	}
+
+	if (is_nan($tipTotal)) {
+		$tipTotal = 0.00;
+	}
 ?>
-	Weekly Average Tips: <?php echo '$'.$avg.'<br><br>'; ?>
+	Weekly Average Tips: <?php echo '$'.$avg.'&nbsp;&nbsp;&nbsp; Total Tips Made: $'.$tipTotal.'<br><br>'; ?>
 </h6>
 <table class="table table-hover">
 	<thead>
