@@ -51,11 +51,11 @@ function clean_input($data) {
 <h1 id="sign-up-form-title">Login</h1>
 <div id="sign-up-form">
     <form method="POST" action="./index.php?page=login">
-	<label for="email" class="input-label">Email</label>
-	<input type="email" name="email" class="form-input"><br>
+	<h6 class="input-label">Email</h6>
+	<input type="email" name="email" class="form-input"><br><br>
 
-	<label for="pword" class="input-label">Password</label>
-	<input type="password" name="pword" class="form-input"><br>
+	<h6 class="input-label">Password</h6>
+	<input type="password" name="pword" class="form-input"><br><br>
 
 	<input type="submit" value="Login" id="sub-btn">
 	<p>Not a user? <a href="./index.php?page=sign-up">Sign Up</a></p>

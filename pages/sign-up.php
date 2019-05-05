@@ -109,20 +109,20 @@ function get_org_id($org) {
 <h1 id="sign-up-form-title">Sign Up</h1>
 <div id="sign-up-form">
     <form method="POST" action="./index.php?page=sign-up">
-	<label for="fname" class="input-label">First Name</label>
+	<h6 class="input-label">First Name</h6>
 	<input type="text" name="fname" class="form-input"><br>
 
-	<label for="lname" class="input-label">Last Name</label>
+	<h6 class="input-label">Last Name</h6>
 	<input type="text" name="lname" class="form-input"><br>
 
-	<label for="email" class="input-label">Email</label>
+	<h6 class="input-label">Email</h6>
 	<input type="email" name="email" class="form-input"><br>
 
-	<label for="pword" class="input-label">Password</label>
+	<h6 class="input-label">Password</h6>
 	<input type="password" name="pword" class="form-input"><br>
 
-	<label for="org" class="input-label">Organization (optional)</label>
-		<input type="text" name="org" class="form-input"><br>
+	<h6 class="input-label">Organization (optional)</h6>
+		<input type="text" name="org" class="form-input"><br><br>
 
 	<input type="submit" value="Sign Up" id="sub-btn">
 	<p>Already a user? <a href="./index.php?page=login">Login</a></p>

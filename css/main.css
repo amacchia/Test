@@ -11,3 +11,7 @@ body {
 #footer, #header {
 	background-color: #4caf50;
 }
+
+tr:hover{
+	cursor: pointer;
+}
