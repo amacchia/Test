@@ -7,7 +7,7 @@
 			</div>
 
 			<div class="col">
-				<input id="monTips" name="monTips" class="form-control" type="number"/>
+				<input id="monTips" name="monTips" class="form-control" type="number" step=".01"/>
 			</div>
 		</div>
 	</div>
@@ -20,7 +20,7 @@
 			</div>
 
 			<div class="col">
-				<input id="tueTips" name="tueTips" class="form-control" type="number"/>
+				<input id="tueTips" name="tueTips" class="form-control" type="number" step=".01"/>
 			</div>
 		</div>
 	</div>
@@ -33,7 +33,7 @@
 			</div>
 
 			<div class="col">
-				<input id="wedTips" name="wedTips" class="form-control" type="number"/>
+				<input id="wedTips" name="wedTips" class="form-control" type="number" step=".01"/>
 
 			</div>
 		</div>
@@ -47,7 +47,7 @@
 			</div>
 
 			<div class="col">
-				<input id="thrTips" name="thrTips" class="form-control" type="number"/>
+				<input id="thrTips" name="thrTips" class="form-control" type="number" step=".01"/>
 			</div>
 		</div>
 	</div>
@@ -60,7 +60,7 @@
 			</div>
 
 			<div class="col">
-				<input id="friTips" name="friTips" class="form-control" type="number"/>
+				<input id="friTips" name="friTips" class="form-control" type="number" step=".01"/>
 			</div>
 		</div>
 	</div>
@@ -74,7 +74,7 @@
 			</div>
 	
 			<div class="col">
-				<input id="satTips" name="satTips" class="form-control" type="number"/>
+				<input id="satTips" name="satTips" class="form-control" type="number" step=".01"/>
 			</div>
 		</div>
 	</div>
@@ -87,7 +87,7 @@
 			</div>
 
 			<div class="col">
-				<input id="sunTips" name="sunTips" class="form-control" type="number"/>
+				<input id="sunTips" name="sunTips" class="form-control" type="number" step=".01"/>
 			</div>
 		</div>
 	</div>	
@@ -100,7 +100,7 @@
 			</div>
 			
 			<div class="col">
-				<input id="hours_worked" class="form-control" name="hours_worked" type="number"/>
+				<input id="hours_worked" class="form-control" name="hours_worked" type="number" step=".01"/>
 			</div>
 		</div>
 	</div>
@@ -113,7 +113,7 @@
 			</div>
 			
 			<div class="col">
-				<input id="weekly_pay" class="form-control" name="weekly_pay" type="number"/>
+				<input id="weekly_pay" class="form-control" name="weekly_pay" type="number" step=".01"/>
 			</div>
 		</div>
 	</div>

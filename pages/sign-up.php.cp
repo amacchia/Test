@@ -1,30 +1,17 @@
 <?php
 $fname = $lname = $email = $pword = $org = $errMsg = "";
-$fnameErrMsg = $lnameErrMsg = $emailErrMsg = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (empty($_POST["fname"])) {
 		$errMsg .= "Please enter a first name <br>";
 	}
-	else{
-		$fname = clean_input($_POST["fname"]);
-		validateFName($fname);
-	}
 
 	if (empty($_POST["lname"])) {
 		$errMsg .= "Please enter a last name <br>";
 	}
-	else{
-		$lname = clean_input($_POST["lname"]);
-		validateLName($lname);
-	}
 
 	if (empty($_POST["email"])) {
 		$errMsg .= "Please enter an email <br>";
-	}
-	else{
-		$email = clean_input($_POST["email"]);
-		validateEmail($email);
 	}
 
 	if (empty($_POST["pword"])) {
@@ -116,76 +103,20 @@ function get_org_id($org) {
 		echo 'Error getting org <br>';
 	}
 }
-
-function validateFName($fname) {
-	$regex = "/[a-zA-z]+$/";
-	if (!preg_match($regex, $fname) || strlen($lname) > 50) {
-		global $fnameErrMsg;
-		$fnameErrMsg = "First name cannot contain special characters or be longer than 50 characters";
-	}
-}
-
-function validateLName($lname){
-	$regex = "/[a-zA-z]+$/";
-	if (!preg_match($regex, $lname) || strlen($lname) > 50) {
-		global $lnameErrMsg;
-		$lnameErrMsg = "Last name cannot contain special characters or be longer than 50 characters";
-	}
-}
-function validateEmail($email) {
-	if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-		global $emailErrMsg;
-		$emailErrMsg = "Invalid email format.";
-	}
-}
 ?>
 
 <div class="container">
 <h1 id="sign-up-form-title">Sign Up</h1>
 <div id="sign-up-form">
     <form method="POST" action="./index.php?page=sign-up">
-
 	<h6 class="input-label">First Name</h6>
-	<input type="text" id="first" name="fname" class="form-input">
-	&nbsp; <span id="first-valid" hidden></span>
-	<span id="first-invalid" hidden></span>
-	<span id="first-err-msg" hidden></span>
-	<?php
-		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			if ($fnameErrMsg != "") {
-				echo '<span id="server-first-msg" class="server-err-msg">'.$fnameErrMsg.'</span>';
-			}
-		}
-	?>
-	<br>
+	<input type="text" name="fname" class="form-input"><br>
 
 	<h6 class="input-label">Last Name</h6>
-	<input type="text" id="last" name="lname" class="form-input">
-	&nbsp; <span id="last-valid" hidden></span>
-	<span id="last-invalid" hidden></span>
-	<span id="last-err-msg" hidden></span>
-	<?php
-		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			if ($lnameErrMsg != "") {
-				echo '<span id="server-last-msg" class="server-err-msg">'.$lnameErrMsg.'</span>';
-			}
-		}
-	?>
-	<br>
+	<input type="text" name="lname" class="form-input"><br>
 
 	<h6 class="input-label">Email</h6>
-	<input type="email" id ="email" name="email" class="form-input">
-	&nbsp; <span id="email-valid" hidden></span>
-	<span id="email-invalid" hidden></span>
-	<span id="email-err-msg" hidden></span>
-	<?php
-		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			if ($emailErrMsg != "") {
-				echo '<span id="server-email-msg" class="server-err-msg">'.$emailErrMsg.'</span>';
-			}
-		}
-	?>
-	<br>
+	<input type="email" name="email" class="form-input"><br>
 
 	<h6 class="input-label">Password</h6>
 	<input type="password" name="pword" class="form-input"><br>
@@ -193,7 +124,7 @@ function validateEmail($email) {
 	<h6 class="input-label">Organization (optional)</h6>
 		<input type="text" name="org" class="form-input"><br><br>
 
-	<input type="submit" value="Sign Up" id="sub-btn" disabled>
+	<input type="submit" value="Sign Up" id="sub-btn">
 	<p>Already a user? <a href="./index.php?page=login">Login</a></p>
     </form>
 </div>
@@ -206,4 +137,3 @@ if ($errMsg != "") {
 ?>
 </div>
 </div>
-<script src="./sign-up.js"></script>

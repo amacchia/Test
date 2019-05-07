@@ -7,7 +7,7 @@
 			</div>
 
 			<div class="col">
-				<input id="editMonTips" name="monTips" class="form-control" type="number"/>
+				<input id="editMonTips" name="monTips" class="form-control" type="number" step=".01"/>
 			</div>
 		</div>
 	</div>
@@ -20,7 +20,7 @@
 			</div>
 
 			<div class="col">
-				<input id="editTueTips" name="tueTips" class="form-control" type="number"/>
+				<input id="editTueTips" name="tueTips" class="form-control" type="number" step=".01"/>
 			</div>
 		</div>
 	</div>
@@ -33,7 +33,7 @@
 			</div>
 
 			<div class="col">
-				<input id="editWedTips" name="wedTips" class="form-control" type="number"/>
+				<input id="editWedTips" name="wedTips" class="form-control" type="number" step=".01"/>
 
 			</div>
 		</div>
@@ -47,7 +47,7 @@
 			</div>
 
 			<div class="col">
-				<input id="editThrTips" name="thrTips" class="form-control" type="number"/>
+				<input id="editThrTips" name="thrTips" class="form-control" type="number" step=".01"/>
 			</div>
 		</div>
 	</div>
@@ -60,7 +60,7 @@
 			</div>
 
 			<div class="col">
-				<input id="editFriTips" name="friTips" class="form-control" type="number"/>
+				<input id="editFriTips" name="friTips" class="form-control" type="number" step=".01"/>
 			</div>
 		</div>
 	</div>
@@ -73,7 +73,7 @@
 			</div>
 	
 			<div class="col">
-				<input id="editSatTips" name="satTips" class="form-control" type="number"/>
+				<input id="editSatTips" name="satTips" class="form-control" type="number" step=".01"/>
 			</div>
 		</div>
 	</div>
@@ -86,7 +86,7 @@
 			</div>
 
 			<div class="col">
-				<input id="editSunTips" name="sunTips" class="form-control" type="number"/>
+				<input id="editSunTips" name="sunTips" class="form-control" type="number" step=".01"/>
 			</div>
 		</div>
 	</div>	
@@ -99,7 +99,7 @@
 			</div>
 			
 			<div class="col">
-				<input id="editHoursWorked" class="form-control" name="hours_worked" type="number"/>
+				<input id="editHoursWorked" class="form-control" name="hours_worked" type="number" step=".01"/>
 			</div>
 		</div>
 	</div>
@@ -112,7 +112,7 @@
 			</div>
 			
 			<div class="col">
-				<input id="editWeeklyPay" class="form-control" name="weekly_pay" type="number"/>
+				<input id="editWeeklyPay" class="form-control" name="weekly_pay" type="number" step=".01"/>
 			</div>
 		</div>
 	</div>

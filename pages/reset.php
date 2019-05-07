@@ -1,9 +1,13 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	$email = "";
+	$email = $emailErrMsg = "";
 
 	if (!empty($_POST["email"])) {
 		$email = clean_input($_POST["email"]);
+		validateEmail($email);
+	}
+	else{
+		$emailErrMsg = "Please enter an email.";
 	}
  	
 	$sql = "SELECT user_id FROM users WHERE email = '$email'";
@@ -42,6 +46,13 @@ function clean_input($data) {
 	$data = htmlspecialchars($data);
 	return $data;
 }
+
+function validateEmail($email){
+	if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		global $emailErrMsg;
+		$emailErrMsg = "Invalid email format.";
+	}
+}
 ?>
 
 
@@ -52,10 +63,22 @@ function clean_input($data) {
 
 		<label for="email"><h4>Enter your email address</h4></label><br>	
 
-		<input id="email" type="email" name="email" required >
+		<input id="email" id="email" type="email" name="email" required >
+		&nbsp; <span id="email-valid" hidden></span>
+	        <span id="email-invalid"  hidden></span>
+        	<span id="email-err-msg" hidden></span>
+        	<?php
+        		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                		if ($emailErrMsg != "") {
+                        		echo '<span id="server-email-msg">'.$emailErrMsg.'</span>';
+                		}
+        		}
+        	?>
+		<br>
 
-		<input type="submit">
+		<input type="submit" id="sub-btn" disabled>
 	</form>
 	<br>
 	<p>Return to <a href="./index.php?page=login">Login</a></p>	
 </div>
+<script src="./reset.js"></script>
